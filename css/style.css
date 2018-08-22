@@ -1,15 +1,15 @@
 h1 {
 
     background-color:rgba(137, 43, 226, 0.342);
-     width: 190px; 
-     margin-left: 400px; 
+     width: 180px; 
+     margin-left: auto; 
      font-weight: bold;
      font-size: x-large;
      
 }
 
 h2 {
-margin-left: 750px
+margin-left: auto
 
  
 }
@@ -17,6 +17,45 @@ margin-left: 750px
 h3 {
 margin-left: 600px 
 }
+
+body {
+    margin: 0;
+    display: grid;
+    grid-template-areas: 
+    "navigation"
+    "header"
+    "content"
+    "footer";
+    grid-template-rows: min-content min-content auto min-content;
+
+}
+
+#navigation a +ul:hover,
+#navigation a:hover + ul {
+    display: flex;
+    flex-direction: column;
+    word-wrap: none;
+    height: 30vh;
+    justify-content: space-between;
+}
+
+#navigation {
+    position: sticky;
+    background-color: ;
+    color: ;
+    padding: ;
+    top: ;
+
+}
+#navigation > ul {
+    align-items:center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#
+
 p {
 font-weight:bold 
 }
@@ -42,6 +81,10 @@ body{
     max-width: 300px;
     width: 80%;
 }
+
+
+
+
 
 img {
     display: block;
