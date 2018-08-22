@@ -94,3 +94,25 @@ img {
     max-width: 500px;
 
 }
+
+#content li:hover {
+
+}
+
+#footer
+
+@media screen and (min-width: 500px) {
+    grid-template-areas:
+    "navigation header"
+    "navigation content"
+    "navigation footer"
+
+    grid-template-rows: min-content auto min-content;
+    grid-template-columns: 20vw auto;
+
+
+#navigation > ul{
+    flex-direction: column;
+}
+
+}
