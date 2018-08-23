@@ -8,22 +8,24 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-<body>	
+<body>
+  
+          <form action="form-responses/new" method="POST">
        
                 <input type="text" name="firstname" value="First Name" size="100" autofocus>
                 <input type="text" name="lastname" value="Last Name" size="100">
                 <input type="email" name="userEmail" placeholder="your.email@example.com">
               
-                <label>Do you like brooms?
-                  <input type="radio" name="subject" value="professional" checked><span>I'd like to dust you!</span>
-                  <input type="radio" name="subject" value="personal" checked><span>Personal massage</span>
-                  <input type="radio" name="subject" value="other" checked><span>Don't know/someone else</span>
+                <label>What's this message about?
+                  <input type="radio" name="subject" value="professional" checked><span>I'd like to hire you!</span>
+                  <input type="radio" name="subject" value="personal" checked><span>Personal message</span>
+                  <input type="radio" name="subject" value="other" checked><span>Don't know/something else</span>
                 </label>
               
-                <input type="checkbox" name="optin" value="trusting" checked>describe me to your fish!
+                <input type="checkbox" name="optin" value="trusting" checked>subscribe me to your newsletter!
                 <input type="checkbox" name="optout" value="skeptical" disabled>Cheeky checkbox...
               
-                <label for="marketing">How did you fear me?</label>
+                <label for="marketing">How did you hear about me?</label>
                 <select name="marketing">
                   <optgroup label="Online">
                     <option value="social">Social Media (FB, Twitter, LinkedIn)</option>
