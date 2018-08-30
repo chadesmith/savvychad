@@ -1,50 +1,36 @@
-h1 {
-
-    background-color:rgba(137, 43, 226, 0.342);
-     width: 180px; 
-     margin-left: auto; 
-     font-weight: bold;
-     font-size: x-large;
-     
-}
-
-h2 {
-margin-left: auto
-
- 
-}
-
-h3 {
-margin-left: 600px 
-}
-
 body {
     
-    background-color:burlywood;
+    background-color:lightblue;
     border: 10px;
-    padding: 10px;
-    margin: 0;
-    display: grid;
-    grid-template-areas: 
-    "navigation"
-    "header"
-    "content"
-    "footer";
-    grid-template-rows: min-content min-content auto min-content;
-
+    padding: 100px;
+    margin: 2;
+    display:grid;
 }
+  
+    
+.header{
+    font-style:alegreya;
+    color:darkblue;
+   
+}
+ 
+ 
+#who {    
+ font-size:85px;
+   text-align:center; 
+   min-width:60%;  
+  }
 
-#navigation {
+#what {
+    text-align:center;
+ }
+
+.navigation {
     position: sticky;
-    background-color: ;
-    color: ;
-    padding: ;
-    top: ;
+   }
 
-}
-
-#navigation a +ul:hover,
-#navigation a:hover + ul {
+.navigation a +ul:hover,
+.navigation a:hover + ul {
     display: flex;
     flex-direction: column;
     word-wrap: none;
@@ -52,49 +38,69 @@ body {
     justify-content: space-between;
 }
 
-#navigation > ul {
+.navigation > ul {
+    flex-direction: column;
     align-items:center;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-
-div {
-color:forestgreen 
-}
-.accent {
-  font-style: italic
-}
-#head {
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+#al {
+   text-align:center;
+    font-size:25px
 }
 
-.container{
+
+.content{
     margin-left: auto;
     margin-right: auto;
-    max-width: 300px;
     width: 80%;
+    text-align:center;
 
 }
 
-
-
+#links{
+    font-size:27px;
+        }
 
 img {
     display: block;
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    max-width: 500px;
-
+    max-width: 450px;
 }
 
-#content li:hover {
-
+.ps{
+    text-align:center;
 }
 
-#footer
+#farewell {
+  font-style: italic;
+      font-size:40px;
+}
+
+#footnotes {
+    font-size:30px;
+}
+
+.footer {
+    text-align:center;
+    padding:50px;
+}
+
+
+
+grid {
+    grid-template-areas: 
+    "navigation"
+    "header"
+    "content"
+    "footer";
+    grid-template-rows: min-content min-content auto min-content;
+
+
 
 @media screen and (min-width: 500px) {
     grid-template-areas:
@@ -106,8 +112,10 @@ img {
     grid-template-columns: 20vw auto;
 
 
-#navigation > ul{
-    flex-direction: column;
 }
 
-}
+
+
+
+
+
