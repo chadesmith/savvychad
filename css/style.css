@@ -99,6 +99,7 @@ grid {
     "content"
     "footer";
     grid-template-rows: min-content min-content auto min-content;
+}
 
 
 
