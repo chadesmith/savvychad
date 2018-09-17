@@ -1,4 +1,12 @@
-export default `
+import Post from '../Post'; 
+
+export default function Blog(posts){
+    return posts
+        .map(Post)
+        .join('');
+} `
+<ul>
+
   <form action="https://formspree.io/alex@savvycoders.com" method="POST">
     <input type="text" name="firstname" placeholder="First Name" required>
     <input type="text" name="lastname" value="Last Name">
@@ -27,4 +35,6 @@ export default `
      <textarea name="user_message" rows="8" cols="40"></textarea>
     <input type="submit">
   </form>
+
+  </ul>
 `;

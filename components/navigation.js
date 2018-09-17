@@ -1,50 +1,31 @@
 
 
 function Link(link){
+    var href = '';
+
+    if(link == 'home'){
+        href = link;
+    }
+
     return `
     <li>
-    <a href="/${link}">${link}</a>
+    <a href="/${href}" data-navigo>${link}</a>
     </li>
     `;
 }
 
-    
-    export default function Navigation(state){
-        var links = "";
-
-    //console.log(state.links);
-
-    for(let i = 0;i < state.links.length; i++){
-     links = links + Link(state.link[i]);
+export default function Navigation(state){
+    var links = '';
+     
+    for(let i = 0; i < state.links.length; i++){
+        links += Link(state.links[i]);
     }
 
     return `
     <div id="navigation">
-        <ul class="container">
+    <ul class="container">
             ${links}
         </ul>
     </div>
     `;
-   }
-     /* <div>
-
-       <ul>
-                <li>
-                <a href= "./blog/">blog</a>
-                </li>
-                <li>
-                <a href= "./contact/">contact info</a>
-                </li>
-                <li>
-                <a href= "./projects/">projects</a> 
-                </li>
-                <li>
-                <a href= "/">home</a> 
-                </li> 
-     </ul>
-           
-     </div> 
-      `; 
- 
-    }
 }
