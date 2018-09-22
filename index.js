@@ -1,52 +1,42 @@
  import axios from 'axios';
  import Navigo from 'navigo';
-import Navigation from ',/component/Navigation';
-import Header from ',/component/Header';
-import Content from './component/Content';
-import Footer from ',/component/Footer';
-import * as State from './store';
-import Posts from ',/posts';
-
+ import Content from './components/Content';
+ import Greeter from './components/Greeter';
+ import Header from ',/components/Header';
+ import Footer from '/components/Footer';;
+ import Navigation from ',/components/Navigation';
+ import  Store from ',/store/store';
+ 
 var root = document.queryselector('#root');
 var router = new Navigo(window.location.origin);
-var newState = Object.assign({}, State);
+var greeter = new Greeter(store.dispatch.bind(store));
 
-function render(state){
+function render(){
+    var state = store.getState();
+
     root.innerHTML = `
-${Navigation(state[state.active])}
-${Header(state[state.active])}
-${Content(state)}
-${Footer()}
-`;
+    ${Navigation(state[state.active])}
+    ${Header(state)}
+    ${Content(state)}
+    ${Footer()}
+    `;
 
- router.updatePageLinks();
+greeter.render(root);
+
+router.updatePageLinks();
 }
 
 function handleNavigation(activePage){
-     newState.active = activePage;
-
- render(newState);
-}
-
-
-
-
-
-
-
-
-
+    store.dispatch(state) => Object.assign(state, {'active':activePage }));
+}   
 
 router
-    .on('/:page', (params) => handleNavigation(params.page))
-    .on('/', () => handleNavigation('home'))
-    .resolve();
+.on('/:page', (params) => handleNavigation(params.page))
+.on('/', () => handleNavigation('home'))
+.resolve();
 
-
-axios 
-.get('http://jsonplaceholder.typicode.com/post'); //returns a promise
-.then(response) => {
-    newState.posts = response.data;
-
-render(newState);
-});
+axios
+.get('https://jsonplaceholder.typicode.com/posts')
+.then((response) => store.dispatch((state) => Object.assign(state, { 'posts': response.data})));
+hl
+store.addListener(render);

@@ -1,5 +1,6 @@
 
-export default `
+export default function Contact(){
+    return `
 <form action="https://formspree.io/alex@savvycoders.com" method="POST">
   <input type="text" name="firstname" placeholder="First Name" required>
   <input type="text" name="lastname" value="Last Name">
@@ -29,3 +30,5 @@ export default `
   <input type="submit">
 </form>
 `
+    ;
+}

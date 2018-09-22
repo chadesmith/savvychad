@@ -5,27 +5,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>blog-chad</title>
+    <title>projects-chad</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
     <link rel="stylesheet" href="../css/style.css">
 
 </head>
 
     <body>
-        <div id="header">Drums n des lou</div>
+        <div id="header">current events</div>
         <div id="navigation">
                 <a href= "./blog/">blog</a>
                 <a href= "./contact/">contact info</a>
                 <a href= "./projects/">projects</a>
-                <a href= "/">home</a>  
-            </div>
+                 <a href= "/">home</a>  
+
+        </div>
 
         <div id="content">
-            <h2>5 w's</h2>
-            <P>A pleathora of percussionist</P>
+            <h2>where and when</h2>
+            <P>ratty tat tat</P>
         </div>
-        <div id="footer"></div>
+        <div id="footer">Thank's for your interest!</div>
+        <h3>updated soon</h3>
+    
+      
 
- </body>
+
+
+    </body>
 
 </html>
