@@ -1,4 +1,5 @@
-export default function home() `
+export default function Home(){
+    return `
     <p class="emphasized">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, natus? In delectus deserunt culpa suscipit, molestias sit placeat aspernatur quos cum vero. Eaque ad architecto, eos hic nulla qui maxime?</p>
     <p class="emphasized">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa sequi natus, autem delectus architecto itaque atque consequuntur quaerat quo, voluptates aspernatur hic doloremque saepe iste tempore magni vel harum explicabo.</p>
     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore odio, error facere tempore, rem recusandae quo iste ex eveniet corrupti, pariatur blanditiis voluptates expedita eos atque excepturi soluta? Odio, distinctio?</p>
@@ -26,3 +27,4 @@ export default function home() `
     </ol>
     <span>Hello</span>
 `;
+}

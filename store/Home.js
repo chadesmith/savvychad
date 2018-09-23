@@ -1,3 +1,4 @@
+
 export default {
     'body': 'home',
     'links': [ 'blog', 'contact', 'projects' ],

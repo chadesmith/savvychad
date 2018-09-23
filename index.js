@@ -1,11 +1,11 @@
- import axios from 'axios';
- import Navigo from 'navigo';
- import Content from './components/Content';
- import Greeter from './components/Greeter';
- import Header from ',/components/Header';
- import Footer from '/components/Footer';;
- import Navigation from ',/components/Navigation';
- import  Store from ',/store/store';
+import axios from 'axios';
+import Navigo from 'navigo';
+import Content from './components/Content';
+import Greeter from './components/Greeter';
+import Header from ',/components/Header';
+import Footer from '/components/Footer';
+import Navigation from ',/components/Navigation';
+import  Store from ',/store/store';
  
 var root = document.queryselector('#root');
 var router = new Navigo(window.location.origin);
@@ -21,22 +21,22 @@ function render(){
     ${Footer()}
     `;
 
-greeter.render(root);
+    greeter.render(root);
 
-router.updatePageLinks();
+    router.updatePageLinks();
 }
 
 function handleNavigation(activePage){
-    store.dispatch(state) => Object.assign(state, {'active':activePage }));
-}   
+    store.dispatch(state); Object.assign(state, { 'active': activePage });
+}
 
 router
-.on('/:page', (params) => handleNavigation(params.page))
-.on('/', () => handleNavigation('home'))
-.resolve();
+    .on('/:page', (params) => handleNavigation(params.page))
+    .on('/', () => handleNavigation('home'))
+    .resolve();
 
 axios
-.get('https://jsonplaceholder.typicode.com/posts')
-.then((response) => store.dispatch((state) => Object.assign(state, { 'posts': response.data})));
-hl
+    .get('https://jsonplaceholder.typicode.com/posts')
+    .then((response) => store.dispatch((state) => Object.assign(state, { 'posts': response.data })));
+hl;
 store.addListener(render);

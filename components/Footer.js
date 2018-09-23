@@ -1,5 +1,9 @@
-export default `
-<div class="footer">
- <a href="mailto:chadrums@gmail.com?Subject=Contact%20Form">Contact e-mail</a><br><a href="https://github.com/chadesmith">github</a>
- </div>
- `;
+export default function Footer(){
+    return `
+      <div id="footer">
+        <div class="container">
+          this is the bottom of my page!
+        </div>
+      </div>
+    `;
+}
