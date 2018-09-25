@@ -1,33 +1,58 @@
 import axios from 'axios';
 import Navigo from 'navigo';
 import Content from './components/Content';
-import Greeter from './components/Greeter';
-import Header from ',/components/Header';
-import Footer from '/components/Footer';
-import Navigation from ',/components/Navigation';
-import  Store from ',/store/store';
- 
-var root = document.queryselector('#root');
-var router = new Navigo(window.location.origin);
-var greeter = new Greeter(store.dispatch.bind(store));
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Navigation from './components/Navigation';
+import * as State from './store';
+
+
+var root = document.querySelector('#root');
+var router = new Navigo(window.location.origin); // returns a router Object
+var store;
+
+class Store{
+    constructor(state){
+        this.state = Object.assign({}, state);
+        this.listeners = [];
+    }
+
+    addStateListener(listener){
+        this.listeners.push(listener);
+    }
+
+    dispatch(reducer){
+        this.state = reducer(this.state);
+
+        this.listeners.forEach((listener) => listener());
+    }
+
+    getState(){
+        return this.state;
+    }
+}
+
+store = new Store(State);
 
 function render(){
     var state = store.getState();
 
     root.innerHTML = `
-    ${Navigation(state[state.active])}
-    ${Header(state)}
-    ${Content(state)}
-    ${Footer()}
+        ${Navigation(state[state.active])}
+        ${Header(state[state.active])}
+        ${Content(state)}
+        ${Footer(state)}
     `;
-
-    greeter.render(root);
 
     router.updatePageLinks();
 }
 
 function handleNavigation(activePage){
-    store.dispatch(state); Object.assign(state, { 'active': activePage });
+    store.dispatch((state) => {
+        state.active = activePage;
+
+        return state;
+    });
 }
 
 router
@@ -37,6 +62,36 @@ router
 
 axios
     .get('https://jsonplaceholder.typicode.com/posts')
-    .then((response) => store.dispatch((state) => Object.assign(state, { 'posts': response.data })));
-hl;
-store.addListener(render);
+    .then((response) => {
+        store.dispatch((state) => {
+            state.posts = response.data;
+
+            return state;
+        });
+    });
+
+axios
+    .get('http://api.openweathermap.org/data/2.5/weather?zip=63108&APPID=8940e272346dc1c7ca592d3e29539351')
+    .then((response) => {
+        store.dispatch((state) => {
+            state.weather = response.data;
+
+            return state;
+        });
+    });
+
+axios
+    .get('https://api.github.com/users/nalexpear/repos', {
+        'headers': {
+          'Authorization': `token ${process.env.GITHUB_API_KEY}` //eslint-disable-line
+        }
+    })
+    .then((response) => {
+        store.dispatch((state) => {
+            state.repos = response.data;
+
+            return state;
+        });
+    });
+
+store.addStateListener(render);
