@@ -4,7 +4,7 @@
   "description": "_this should be italicized_",
   "main": "index.js",
   "scripts": {
-    "start":"parcel build index.html && cp_redirects ./dist/",
+    "start": "parcel build index.html && cp_redirects ./dist/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -25,6 +25,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "navigo": "^7.1.2",
-    "parcel": "^1.9.7"
+    "parcel": "^1.9.7",
+    "popmotion": "^8.4.0"
   }
 }

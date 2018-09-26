@@ -1,5 +1,6 @@
 import axios from 'axios';
 import Navigo from 'navigo';
+import { timeline, styler, tween } from 'popmotion';
 import Content from './components/Content';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -44,6 +45,31 @@ function render(){
         ${Footer(state)}
     `;
 
+
+    document
+        .querySelector('h1')
+        .addEventListener('click'), (event)  => {
+        var animation = timeline({
+          
+            'track': 'size',
+
+            'from': {
+                'color': 'red',
+                'fontSize': '100%'
+            },
+            'to': {
+                'color': 'blue',
+                'fontSize': '200%',
+            },
+            'duration': 2000
+        });
+                                  
+
+        var title = styler(event.target);
+   
+        animation.start((value) => title.set(value));
+    };
+
     router.updatePageLinks();
 }
 
@@ -81,7 +107,7 @@ axios
     });
 
 axios
-    .get('https://api.github.com/users/nalexpear/repos', {
+    .get('https://api.github.com/users/chadesmith/repos', {
         'headers': {
           'Authorization': `token ${process.env.GITHUB_API_KEY}` //eslint-disable-line
         }
