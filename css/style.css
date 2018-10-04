@@ -1,15 +1,15 @@
 
 
 body {
-    color: cadetblue;
+    background-color:black
   }
   
   #root {
     margin: 0;
     display: grid;
     grid-template-areas:
-      "navigation"
       "header"
+      "navigation"
       "content"
       "footer";
     grid-template-rows: min-content min-content auto min-content;
@@ -57,11 +57,11 @@ body {
   }
   
   h2 {
-    color: rgba(91, 25, 204, 0.727);
+    color: #5b19ccb9;
   }
   
   p {
-    background-color: rgb(29, 106, 230);
+    background-color:#5b19ccb9 ;
     font-weight: bold;
   }
   
@@ -77,15 +77,16 @@ body {
   }
   
   .container {
-    background-color: deepskyblue;
+    border: 2px red;
+    background-color: rgb(14, 3, 5);
     margin: 0 auto;
     max-width: 800px;
     width: 100%;
   }
   
   #navigation {
-    background-color: rgb(29, 106, 230);
-    color: cadetblue;
+    background-color:black;
+    color: navy;
     grid-area: navigation;
     padding: 5px;
     position: sticky;
@@ -93,7 +94,7 @@ body {
   }
   
   #navigation a + ul {
-    background-color: lightseagreen;
+    background-color:red;
     display: none;
     position: absolute;
     left: 0;
@@ -115,6 +116,7 @@ body {
     flex-direction: row;
     justify-content: space-around;
     padding: 0;
+    background-color: black;
   }
   
   #navigation > ul > li {

@@ -1,6 +1,6 @@
 export default function Contact(){
     return `
-    <form action="https://formspree.io/alex@savvycoders.com" method="POST">
+    <form action="https://formspree.io/chadrums@gmail.com" method="POST">
     <input type="text" name="firstname" placeholder="First Name" required>
     <input type="text" name="lastname" value="Last Name">
     <input type="email" name="userEmail" placeholder="your.email@example.com" required>

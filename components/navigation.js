@@ -3,7 +3,7 @@
 function Link(link){
     var href = '';
 
-    if(link == 'home'){
+    if(link !== 'home'){
         href = link;
     }
 
@@ -15,10 +15,9 @@ function Link(link){
 }
 
 export default function Navigation(state){
-    var links = state
-        .links
-        .map(Link)
-        .join('');
+    // debugger;
+    var links = '';
+      
      
     for(let i = 0; i < state.links.length; i++){
         links += Link(state.links[i]);
@@ -32,4 +31,3 @@ export default function Navigation(state){
     </div>
     `;
 }
-s;

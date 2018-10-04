@@ -6,8 +6,8 @@ export default function welcomeUser(){
     }
     else{
         document.querySelector('#greeting').innerHTML = `
-          <h3>Welcome to my portfolio page, ${userName}</h3>
-          <h4>You're going to have a grand ol' time</h4>
+          <h3>This is the "Stone in Love page !", ${userName}</h3>
+          <h4>Thank you for your interest!</h4>
         `;
     }
 }

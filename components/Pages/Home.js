@@ -13,22 +13,37 @@ function Repo(repo){
 
     return `
     <li>
-      <a href="${repo.url}">${name}</a>
+      <a href="${repo.html_url}">${name}</a>
     </li>
   `;
 }
 
 export default function Home(state){
+    // debugger;
     var repos = state
         .repos
         .map(Repo)
         .join('');
 
     return `
-    <p class="emphasized">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, natus? In delectus deserunt culpa suscipit, molestias sit placeat aspernatur quos cum vero. Eaque ad architecto, eos hic nulla qui maxime?</p>
-    <p class="emphasized">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa sequi natus, autem delectus architecto itaque atque consequuntur quaerat quo, voluptates aspernatur hic doloremque saepe iste tempore magni vel harum explicabo.</p>
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore odio, error facere tempore, rem recusandae quo iste ex eveniet corrupti, pariatur blanditiis voluptates expedita eos atque excepturi soluta? Odio, distinctio?</p>
+    <ol id="repos">
+      ${repos}
+      </ol>
+      <p class="emphasized">American drummer Chad Smith began playing at 12, and by 14 was
+       performing professionally. In 1985, he began working with indy metal band "Heaven’s 
+       Flame", moving to MCA artist "Mary Burns" in 87, metal blade artist "Anacrusis" in 
+       90, indy rock band "London Calling" in 93, Sony artist "Pavlov's Dog" in 94, and in 
+       97 joined Geezer Butler's G/Z/R replacing Deen Castronovo, who had moved on to Ozzy 
+       Osbourne’s band and later, Journey. 
+         Chad’s playing is a combination of influences ranging from John Bonham, Tommy 
+         Aldridge, Clyde Stubblefield and Steve Gadd. </p>
+   
     <ul>
+      <li>
+      <a  href="https://www.metal-archives.com/artists/Chad_Smith/25180">
+      encyclopia metallum page
+      </a>
+      </li>
       <li>
         <a href="https://github.com/savvychad">
           GitHub profile
@@ -40,7 +55,7 @@ export default function Home(state){
         </a>
       </li>
       <li>
-        <a class="emphasized" href="https://twitter.com/chadrums">
+        <a class="emphasized" href="https://twitter.com/chadesmith">
           @tbd
         </a>
       </li>
@@ -50,8 +65,6 @@ export default function Home(state){
       <li>Second</li>
       <li>Third</li>
     </ol>
-    <ol>
-      ${repos}
-    </ol>
+    
 `;
 }

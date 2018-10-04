@@ -1,6 +1,5 @@
 import axios from 'axios';
 import Navigo from 'navigo';
-import { timeline, styler, tween } from 'popmotion';
 import Content from './components/Content';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -44,31 +43,32 @@ function render(){
         ${Content(state)}
         ${Footer(state)}
     `;
+    console.log(state);
 
 
     document
         .querySelector('h1')
-        .addEventListener('click'), (event)  => {
-        var animation = timeline({
+        .addEventListener('click', (event)  => {
+            var animation = timeline({
           
-            'track': 'size',
+                'track': 'size',
 
-            'from': {
-                'color': 'red',
-                'fontSize': '100%'
-            },
-            'to': {
-                'color': 'blue',
-                'fontSize': '200%',
-            },
-            'duration': 2000
-        });
+                'from': {
+                    'color': 'red',
+                    'fontSize': '100%'
+                },
+                'to': {
+                    'color': 'blue',
+                    'fontSize': '200%',
+                },
+                'duration': 2000
+            });
                                   
 
-        var title = styler(event.target);
+            var title = styler(event.target);
    
-        animation.start((value) => title.set(value));
-    };
+            animation.start((value) => title.set(value));
+        });
 
     router.updatePageLinks();
 }
@@ -91,7 +91,8 @@ axios
     .then((response) => {
         store.dispatch((state) => {
             state.posts = response.data;
-
+            console.log(state);
+            
             return state;
         });
     });
@@ -106,16 +107,18 @@ axios
         });
     });
 
-axios
-    .get('https://api.github.com/users/chadesmith/repos', {
-        'headers': {
-          'Authorization': `token ${process.env.GITHUB_API_KEY}` //eslint-disable-line
-        }
-    })
+axios.get('https://api.github.com/users/chadesmith/repos', {
+    'headers': {
+          'Authorization': `token ${process.env.GITHUB_API_KEY} ` //eslint-disable-line
+    }
+})
     .then((response) => {
+        console.log('response');
+        console.log(response);
         store.dispatch((state) => {
             state.repos = response.data;
-
+         
+            
             return state;
         });
     });

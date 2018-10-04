@@ -5,11 +5,11 @@ export default function Header(state){
     <div id="header">
       <div class="container">
         <h1>${state.title}</h1>
-        <em>this should be italicized</em>
-        <strong>this should be bold</strong>
-        <img src="https://avatars2.githubusercontent.com/u/9038489?s=400&u=29a74373a954d705b6bd58542c6b605c74f88426&v=4" alt="my face">
+       
+        <h1><img src="https://scontent-ort2-2.xx.fbcdn.net/v/t1.0-9/42993625_10212420505530309_6259504651658330112_n.jpg?
+        _nc_cat=101&oh=4c6afa7e0336e16ec9d9f19b3216d542&oe=5C547FD7"></h1>
         <div id="greeting"></div>
-      </div>
+      </div><strong>"bringing you the 'JOURNEY' experience ! "</strong>
     </div>
   `;
 }
